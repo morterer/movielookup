@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24' # Use the Node version matching your Angular app
           cache: 'npm'
@@ -30,7 +30,7 @@ jobs:
         run: npm run build -- --configuration=production --base-href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           folder: dist/movielookup # Change 'your-project-name' to your actual dist subfolder name
           branch: gh-pages # The branch the action will deploy to
