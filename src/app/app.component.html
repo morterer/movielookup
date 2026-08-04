@@ -1,0 +1,40 @@
+<div class="container">
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+
+  <main>
+    <div *ngIf="loading" class="loading">
+      <p>Loading movies...</p>
+    </div>
+
+    <div *ngIf="error" class="error">
+      <p>{{ error }}</p>
+      <button (click)="loadMovies()">Retry</button>
+    </div>
+
+    <div *ngIf="!loading && !error" class="movies-grid">
+      <div *ngFor="let movie of movies" class="movie-card">
+        <div class="movie-poster">
+          <img
+            *ngIf="movie.coverArtUrl"
+            [src]="movie.coverArtUrl"
+            [alt]="movie.name"
+            class="poster-image"
+          />
+          <div *ngIf="!movie.coverArtUrl" class="no-image">No Image</div>
+        </div>
+        <div class="movie-info">
+          <h3 class="movie-name">{{ movie.name }}</h3>
+          <p class="movie-upc" *ngIf="movie.upc">
+            <strong>UPC:</strong> {{ movie.upc }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && !error && movies.length === 0" class="no-movies">
+      <p>No movies found in the spreadsheet.</p>
+    </div>
+  </main>
+</div>
