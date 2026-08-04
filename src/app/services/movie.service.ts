@@ -42,7 +42,7 @@ export class MovieService {
       }
     }
 
-    return movies;
+    return movies.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
   }
 
   private parseCSVLine(line: string): string[] {
