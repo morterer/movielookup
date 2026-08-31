@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error loading movies:', error);
-        this.error = 'Failed to load movies from spreadsheet. Please try again later.';
+        this.error = 'Failed to load movies. Please try again later.';
         this.loading = false;
       }
     });

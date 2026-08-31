@@ -17,24 +17,24 @@
       <div *ngFor="let movie of movies" class="movie-card">
         <div class="movie-poster">
           <img
-            *ngIf="movie.coverArtUrl"
-            [src]="movie.coverArtUrl"
+            *ngIf="movie.cover_art_url"
+            [src]="movie.cover_art_url"
             [alt]="movie.name"
             class="poster-image"
           />
-          <div *ngIf="!movie.coverArtUrl" class="no-image">No Image</div>
+          <div *ngIf="!movie.cover_art_url" class="no-image">No Image</div>
         </div>
         <div class="movie-info">
           <h3 class="movie-name">{{ movie.name }}</h3>
-          <p class="movie-upc" *ngIf="movie.upc">
-            <strong>UPC:</strong> {{ movie.upc }}
+          <p class="movie-data" *ngIf="movie.data">
+            <strong>UPC:</strong> {{ movie.data }}
           </p>
         </div>
       </div>
     </div>
 
     <div *ngIf="!loading && !error && movies.length === 0" class="no-movies">
-      <p>No movies found in the spreadsheet.</p>
+      <p>No movies found in the database.</p>
     </div>
   </main>
 </div>
