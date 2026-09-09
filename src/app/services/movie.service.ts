@@ -23,6 +23,18 @@ export class MovieService {
     );
   }
 
+  searchMovies(movies: Movie[], query: string): Movie[] {
+    if (!query.trim()) {
+      return movies;
+    }
+    
+    const searchTerm = query.toLowerCase().trim();
+    return movies.filter(movie =>
+      movie.name.toLowerCase().includes(searchTerm) ||
+      movie.data.toLowerCase().includes(searchTerm)
+    );
+  }
+
   private getSortName(name: string): string {
     // Remove leading articles 'a', 'an', 'the' (case-insensitive)
     return name.replace(/^(a|an|the)\s+/i, '');
