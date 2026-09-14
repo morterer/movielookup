@@ -9,3 +9,5 @@
     - Column C has the name for a movie
     - Column D has a link to vocer art for a movie
 - Display a list of movies using the name and cover_art_url in the spreadsheet
+- Display the movies in alphabetical order
+    - Ignore articles 'an' 'the' when sorting

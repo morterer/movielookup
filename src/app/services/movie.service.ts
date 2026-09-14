@@ -42,7 +42,13 @@ export class MovieService {
       }
     }
 
-    return movies.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+    return movies.sort((a, b) => {
+      const normalizedName = (name: string) => name.replace(/^(?:an|the)\s+/i, '');
+
+      return normalizedName(a.name).localeCompare(normalizedName(b.name), undefined, {
+        sensitivity: 'base'
+      });
+    });
   }
 
   private parseCSVLine(line: string): string[] {
