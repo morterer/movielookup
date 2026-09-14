@@ -1,6 +1,6 @@
 {
   "name": "movielookup",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Movie inventory application displaying movies from Google Spreadsheet",
   "license": "MIT",
   "scripts": {
