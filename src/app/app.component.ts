@@ -9,8 +9,22 @@ import { MovieService, Movie } from './services/movie.service';
 export class AppComponent implements OnInit {
   title = 'Movie Lookup';
   movies: Movie[] = [];
+  searchTerm = '';
   loading = true;
   error: string | null = null;
+
+  get filteredMovies(): Movie[] {
+    const searchTerm = this.searchTerm.trim().toLowerCase();
+
+    if (!searchTerm) {
+      return this.movies;
+    }
+
+    return this.movies.filter(movie =>
+      movie.name.toLowerCase().includes(searchTerm) ||
+      movie.upc.toLowerCase().includes(searchTerm)
+    );
+  }
 
   constructor(private movieService: MovieService) {}
 

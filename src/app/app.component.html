@@ -13,8 +13,18 @@
       <button (click)="loadMovies()">Retry</button>
     </div>
 
+    <div *ngIf="!loading && !error" class="search-bar">
+      <label for="movie-search">Search movies</label>
+      <input
+        id="movie-search"
+        type="search"
+        [(ngModel)]="searchTerm"
+        placeholder="Search by movie name or UPC"
+      />
+    </div>
+
     <div *ngIf="!loading && !error" class="movies-grid">
-      <div *ngFor="let movie of movies" class="movie-card">
+      <div *ngFor="let movie of filteredMovies" class="movie-card">
         <div class="movie-poster">
           <img
             *ngIf="movie.coverArtUrl"
@@ -33,7 +43,7 @@
       </div>
     </div>
 
-    <div *ngIf="!loading && !error && movies.length === 0" class="no-movies">
+    <div *ngIf="!loading && !error && filteredMovies.length === 0" class="no-movies">
       <p>No movies found in the spreadsheet.</p>
     </div>
   </main>
