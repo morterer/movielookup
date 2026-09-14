@@ -8,3 +8,4 @@
 - Display a list of movies using the name and cover_art_url in the spreadsheet
 - Display the movies in alphabetical order
     - Ignore articles 'an' 'the' when sorting
+- Allow searching against the name and data/UPC

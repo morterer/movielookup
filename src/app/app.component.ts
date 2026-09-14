@@ -9,6 +9,8 @@ import { MovieService, Movie } from './services/movie.service';
 export class AppComponent implements OnInit {
   title = 'Movie Lookup';
   movies: Movie[] = [];
+  allMovies: Movie[] = [];
+  searchQuery = '';
   loading = true;
   error: string | null = null;
 
@@ -23,7 +25,8 @@ export class AppComponent implements OnInit {
     this.error = null;
     this.movieService.getMovies().subscribe({
       next: (movies) => {
-        this.movies = movies;
+        this.allMovies = movies;
+        this.applySearch();
         this.loading = false;
       },
       error: (error) => {
@@ -32,5 +35,14 @@ export class AppComponent implements OnInit {
         this.loading = false;
       }
     });
+  }
+
+  onSearchChange(query: any) {
+    this.searchQuery = typeof query === 'string' ? query : '';
+    this.applySearch();
+  }
+
+  private applySearch() {
+    this.movies = this.movieService.searchMovies(this.allMovies, this.searchQuery);
   }
 }
