@@ -886,5 +886,29 @@
     "data": "0024543396154",
     "name": "Buffy the Vampire Slayer: the Complete Series (DVD)",
     "cover_art_url": "https://images.barcodelookup.com/183/1835105-1.jpg"
+  },
+  {
+    "type": "EAN13",
+    "data": "0883929804412",
+    "name": "The Venture Bros.: The Complete Series (14pc) / (Box)",
+    "cover_art_url": "https://go-upc.s3.amazonaws.com/images/368207392.jpeg"
+  },
+  {
+    "type": "EAN13",
+    "data": "5051298123846",
+    "name": "Fringe: The Complete Series",
+    "cover_art_url": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T2/images/I/514wghc3csL._SL1500_.jpg"
+  },
+  {
+    "type": "EAN13",
+    "data": "0883904109662",
+    "name": "Dead Like Me: The Complete Collection [9 Discs]",
+    "cover_art_url": "https://go-upc.s3.amazonaws.com/images/83229507.jpeg"
+  },
+  {
+    "type": "EAN13",
+    "data": "5051892241021",
+    "name": "Westworld: The Complete Series",
+    "cover_art_url": "https://go-upc.s3.amazonaws.com/images/347192139.jpeg"
   }
 ]
