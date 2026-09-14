@@ -1,15 +1,6 @@
 <div class="container">
   <header>
     <h1>{{ title }}</h1>
-    <div *ngIf="!loading" class="search-box">
-      <input
-        type="text"
-        placeholder="Search by movie name or UPC..."
-        [value]="searchQuery"
-        (input)="onSearchChange($any($event).target.value)"
-        class="search-input"
-      />
-    </div>
   </header>
 
   <main>
@@ -43,7 +34,7 @@
     </div>
 
     <div *ngIf="!loading && !error && movies.length === 0" class="no-movies">
-      <p>{{ searchQuery ? 'No movies match your search.' : 'No movies found in the database.' }}</p>
+      <p>No movies found in the database.</p>
     </div>
   </main>
 </div>
