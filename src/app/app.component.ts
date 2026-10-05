@@ -32,6 +32,10 @@ export class AppComponent implements OnInit {
     this.loadMovies();
   }
 
+  clearSearch(): void {
+    this.searchTerm = '';
+  }
+
   loadMovies() {
     this.loading = true;
     this.error = null;
