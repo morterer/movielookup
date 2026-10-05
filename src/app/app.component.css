@@ -34,13 +34,35 @@ main {
   font-weight: bold;
 }
 
+.search-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .search-bar input {
+  flex: 1;
   width: 100%;
   box-sizing: border-box;
   padding: 12px 14px;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
+}
+
+.clear-search {
+  padding: 11px 14px;
+  border: none;
+  border-radius: 4px;
+  background: white;
+  color: #4c1d95;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.clear-search:hover {
+  transform: scale(1.02);
 }
 
 .loading,

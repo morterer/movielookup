@@ -15,12 +15,23 @@
 
     <div *ngIf="!loading && !error" class="search-bar">
       <label for="movie-search">Search movies</label>
-      <input
-        id="movie-search"
-        type="search"
-        [(ngModel)]="searchTerm"
-        placeholder="Search by movie name or UPC"
-      />
+      <div class="search-controls">
+        <input
+          id="movie-search"
+          type="search"
+          [(ngModel)]="searchTerm"
+          placeholder="Search by movie name or UPC"
+        />
+        <button
+          *ngIf="searchTerm.trim()"
+          type="button"
+          class="clear-search"
+          (click)="clearSearch()"
+          aria-label="Clear search"
+        >
+          Clear
+        </button>
+      </div>
     </div>
 
     <div *ngIf="!loading && !error" class="movies-grid">
